@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>スロパチステーション</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67067175-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script>
+
+      function getQueryString()
+      {
+          var vars = [], max = 0, hash = "", array = "";
+          var url = window.location.search;
+
+          hash  = url.slice(1).split('&');
+          max = hash.length;
+          for (var i = 0; i < max; i++) {
+            //keyとvalueに分割
+            array = hash[i].split('=');
+            vars[array[0]] = array[1];
+          }
+          return vars;
+      }
+      function getDeviceType() {
+        if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0){
+          return 'iOS';
+        } else if (navigator.userAgent.indexOf('Android') > 0){
+          return 'Android';
+        }
+        return 'PC';
+      }
+
+      function selfRedirect() {
+        var queryString = getQueryString();
+
+        if (!('utm_source' in queryString) || !('utm_medium' in queryString)) {
+          if (deviceType === 'iOS') {
+            //iPhone用の処理
+            window.location.href="?utm_source=present&utm_medium=iOS&utm_campaign=present_ios";
+            return false;
+          } else if (deviceType === 'Android') {
+            //Android用の処理
+            window.location.href="?utm_source=present&utm_medium=Android&utm_campaign=present_android";
+            return false;
+          } else {
+            // 上記以外(PC)からのアクセス
+            window.location.href="?utm_source=present&utm_medium=PC&utm_campaign=present_pc";
+            return false;
+          }
+        }
+        return true;
+      }
+
+      var deviceType  = getDeviceType();
+
+      if (selfRedirect()) {
+        if (deviceType === 'iOS') {
+          //iPhone用の処理
+          window.location.href="https://ref.ad-brix.com/v1/referrallink?ak=859573087&ck=2629736";
+        } else if (deviceType === 'Android') {
+          //Android用の処理
+          window.location.href="https://ref.ad-brix.com/v1/referrallink?ak=410986629&ck=3136366";
+        } else {
+          // 上記以外(PC)からのアクセス
+          window.location.href="http://slopachi-station.com/";
+        }
+      }
+
+
+    </script>
+  </head>
+
+  <style>
+    body {
+      text-align: center;
+    }
+    p {
+      width: 340px;
+      margin: 0 auto;
+    }
+    li {
+      list-style: none;
+      margin: 20px auto;
+    }
+  </style>
+
+  <body>
+    <section>
+      <header>
+    <footer>
+    </footer>
+  </body>
+</html>
+
+
